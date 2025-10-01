@@ -187,10 +187,12 @@ export default function PricingSection({
 
                     {/* Enhanced CTA Button */}
                     <Button
-                      onClick={handleCheckout}
+                      asChild
                       className="mb-6 min-h-[44px] w-full rounded-full bg-gradient-to-r from-[#4CAF50] to-[#45a049] py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl sm:mb-8 sm:py-4 sm:text-base md:py-5 md:text-base lg:py-7 lg:text-lg"
                     >
-                      DÊ O PRÓXIMO PASSO AGORA
+                      <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                        DÊ O PRÓXIMO PASSO AGORA
+                      </a>
                     </Button>
 
                     {/* Footer Text with Icons */}

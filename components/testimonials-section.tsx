@@ -142,10 +142,12 @@ export default function TestimonialsSection({
         {/* CTA Button */}
         <div className="mt-12 flex justify-center sm:mt-14 md:mt-16">
           <Button
-            onClick={handleCheckout}
+            asChild
             className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-brand-hover hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:h-14 md:px-10 md:text-base lg:px-12 lg:text-lg"
           >
-            Sim, estou pronta para meu Detox Emocional
+            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              Sim, estou pronta para meu Detox Emocional
+            </a>
           </Button>
         </div>
       </div>

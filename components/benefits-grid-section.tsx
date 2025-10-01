@@ -96,10 +96,12 @@ export default function BenefitsGridSection({
         <div className="flex justify-center">
           <Button
             size="lg"
-            onClick={handleCheckout}
+            asChild
             className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-brand-hover sm:w-auto sm:px-8 sm:py-4 sm:text-base md:px-10 md:text-base lg:px-12 lg:text-lg"
           >
-            Quero recuperar a minha esperança pela vida
+            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              Quero recuperar a minha esperança pela vida
+            </a>
           </Button>
         </div>
       </div>

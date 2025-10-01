@@ -51,10 +51,12 @@ export default function DetoxSection({
           <div className="flex justify-center">
             <Button
               size="lg"
-              onClick={handleCheckout}
+              asChild
               className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-brand-hover hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:py-5 md:text-base lg:px-8 lg:py-6 lg:text-lg"
             >
-              Quero começar meu Detox Emocional agora
+              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                Quero começar meu Detox Emocional agora
+              </a>
             </Button>
           </div>
         </div>

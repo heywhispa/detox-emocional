@@ -110,12 +110,14 @@ export default function GuaranteeSection({
           </div>
 
           {/* CTA Button */}
-          <button
-            onClick={handleCheckout}
-            className="min-h-[44px] w-full rounded-full bg-gradient-to-r from-primary-brand to-primary-brand-hover px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:px-10 md:py-5 md:text-lg lg:text-xl"
+          <a
+            href={checkoutUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-[44px] w-full rounded-full bg-gradient-to-r from-primary-brand to-primary-brand-hover px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:px-10 md:py-5 md:text-lg lg:text-xl inline-block text-center"
           >
             Quero dar o primeiro passo agora
-          </button>
+          </a>
         </div>
       </div>
     </section>

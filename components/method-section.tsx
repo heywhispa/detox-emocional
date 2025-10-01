@@ -123,10 +123,12 @@ export default function MethodSection({
         <div className="mt-10 flex justify-center sm:mt-12">
           <Button
             size="lg"
-            onClick={handleCheckout}
+            asChild
             className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-brand-hover hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:h-14 md:px-10 md:text-base lg:px-12 lg:text-lg"
           >
-            Quero recuperar minha confiança
+            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+              Quero recuperar minha confiança
+            </a>
           </Button>
         </div>
       </div>

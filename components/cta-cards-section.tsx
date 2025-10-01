@@ -44,10 +44,12 @@ export default function CtaCardsSection({
             {/* CTA Button */}
             <Button
               size="lg"
-              onClick={handleCheckout}
+              asChild
               className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-primary-brand-hover sm:w-auto sm:px-8 sm:py-4 sm:text-base md:px-8 md:py-5 md:text-base lg:text-lg"
             >
-              Quero iniciar meu Detox agora
+              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                Quero iniciar meu Detox agora
+              </a>
             </Button>
           </div>
 

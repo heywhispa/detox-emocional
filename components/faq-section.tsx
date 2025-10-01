@@ -61,12 +61,14 @@ export default function FaqSection({
 
         {/* CTA Button */}
         <div className="mb-12 flex justify-center sm:mb-14 md:mb-16">
-          <button
-            onClick={handleCheckout}
-            className="min-h-[44px] w-full rounded-full bg-gradient-to-r from-primary-brand to-primary-brand-hover px-6 py-3 text-sm font-bold text-white shadow-lg transition-transform hover:scale-105 sm:w-auto sm:px-8 sm:py-4 sm:text-base md:px-10 md:py-5 md:text-lg lg:text-xl"
+          <a
+            href={checkoutUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-[44px] w-full rounded-full bg-gradient-to-r from-primary-brand to-primary-brand-hover px-6 py-3 text-sm font-bold text-white shadow-lg transition-transform hover:scale-105 sm:w-auto sm:px-8 sm:py-4 sm:text-base md:px-10 md:py-5 md:text-lg lg:text-xl inline-block text-center"
           >
             Acesse agora o Detox Emocional
-          </button>
+          </a>
         </div>
 
         {/* Footer */}
