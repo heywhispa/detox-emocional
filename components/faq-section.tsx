@@ -1,8 +1,12 @@
 "use client"
 
-export default function FaqSection() {
+export default function FaqSection({
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd",
+}: {
+  checkoutUrl?: string
+}) {
   const handleCheckout = () => {
-    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+    window.location.href = checkoutUrl
   }
 
   const faqs = [

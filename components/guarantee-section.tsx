@@ -1,8 +1,12 @@
 "use client"
 
-export default function GuaranteeSection() {
+export default function GuaranteeSection({
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd",
+}: {
+  checkoutUrl?: string
+}) {
   const handleCheckout = () => {
-    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+    window.location.href = checkoutUrl
   }
 
   return (

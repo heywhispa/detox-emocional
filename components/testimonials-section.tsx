@@ -4,11 +4,15 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd",
+}: {
+  checkoutUrl?: string
+}) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleCheckout = () => {
-    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+    window.location.href = checkoutUrl
   }
 
   const testimonials = [

@@ -2,9 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 
-export default function PricingSection() {
+export default function PricingSection({
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd",
+}: {
+  checkoutUrl?: string
+}) {
   const handleCheckout = () => {
-    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+    window.location.href = checkoutUrl
   }
 
   const items = [

@@ -13,39 +13,41 @@ const FaqSection = lazy(() => import("@/components/faq-section"))
 const SectionFallback = () => <div className="min-h-[200px]" />
 
 export default function Home() {
+  const checkoutUrl = "https://pay.hotmart.com/D80370991B?off=2qs7fnm8&bid=1759321561837"
+
   return (
     <main>
       {/* Above the fold - load immediately */}
-      <DetoxSection />
+      <DetoxSection checkoutUrl={checkoutUrl} />
       <BenefitsSection />
 
       {/* Below the fold - lazy load */}
       <Suspense fallback={<SectionFallback />}>
-        <CtaCardsSection />
+        <CtaCardsSection checkoutUrl={checkoutUrl} />
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>
-        <BenefitsGridSection />
+        <BenefitsGridSection checkoutUrl={checkoutUrl} />
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>
-        <MethodSection />
+        <MethodSection checkoutUrl={checkoutUrl} />
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>
-        <TestimonialsSection />
+        <TestimonialsSection checkoutUrl={checkoutUrl} />
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>
-        <PricingSection />
+        <PricingSection checkoutUrl={checkoutUrl} />
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>
-        <GuaranteeSection />
+        <GuaranteeSection checkoutUrl={checkoutUrl} />
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>
-        <FaqSection />
+        <FaqSection checkoutUrl={checkoutUrl} />
       </Suspense>
     </main>
   )

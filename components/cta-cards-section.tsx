@@ -3,9 +3,13 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
-export default function CtaCardsSection() {
+export default function CtaCardsSection({
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd",
+}: {
+  checkoutUrl?: string
+}) {
   const handleCheckout = () => {
-    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+    window.location.href = checkoutUrl
   }
 
   return (
