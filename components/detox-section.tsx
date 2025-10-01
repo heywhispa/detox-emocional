@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -10,10 +8,6 @@ export default function DetoxSection({
   checkoutUrl?: string
   fullPrice?: string
 }) {
-  const handleCheckout = () => {
-    window.location.href = checkoutUrl
-  }
-
   return (
     <section className="relative min-h-[600px] bg-background-alt sm:min-h-screen">
       <div className="flex min-h-[600px] items-center justify-center sm:min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12">
@@ -76,7 +70,7 @@ export default function DetoxSection({
             height={80}
             sizes="80px"
             className="w-full h-auto drop-shadow-lg"
-            loading="lazy"
+            priority
           />
         </div>
 
@@ -96,7 +90,7 @@ export default function DetoxSection({
             height={96}
             sizes="96px"
             className="w-full h-auto drop-shadow-lg"
-            loading="lazy"
+            priority
           />
         </div>
       </div>

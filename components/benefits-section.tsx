@@ -13,7 +13,7 @@ export default function BenefitsSection() {
             height={48}
             sizes="80px"
             className="h-8 sm:h-10 md:h-12"
-            loading="lazy"
+            priority
           />
         </div>
 
@@ -41,7 +41,7 @@ export default function BenefitsSection() {
                   height={48}
                   sizes="48px"
                   className="h-10 w-10 sm:h-12 sm:w-12"
-                  loading="lazy"
+                  priority
                 />
               </div>
               <p className="text-pretty text-base leading-relaxed text-text-muted sm:text-lg">
@@ -58,7 +58,6 @@ export default function BenefitsSection() {
                   height={48}
                   sizes="48px"
                   className="h-10 w-10 sm:h-12 sm:w-12"
-                  loading="lazy"
                 />
               </div>
               <p className="text-pretty text-base leading-relaxed text-text-muted sm:text-lg">
@@ -75,7 +74,6 @@ export default function BenefitsSection() {
                   height={48}
                   sizes="48px"
                   className="h-10 w-10 sm:h-12 sm:w-12"
-                  loading="lazy"
                 />
               </div>
               <p className="text-pretty text-base leading-relaxed text-text-muted sm:text-lg">
@@ -92,7 +90,6 @@ export default function BenefitsSection() {
                   height={48}
                   sizes="48px"
                   className="h-10 w-10 sm:h-12 sm:w-12"
-                  loading="lazy"
                 />
               </div>
               <p className="text-pretty text-base leading-relaxed text-text-muted sm:text-lg">
