@@ -4,9 +4,11 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export default function DetoxSection({
-  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd",
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd&bid=1759319546432",
+  fullPrice = "147,00",
 }: {
   checkoutUrl?: string
+  fullPrice?: string
 }) {
   const handleCheckout = () => {
     window.location.href = checkoutUrl
@@ -34,7 +36,7 @@ export default function DetoxSection({
             <div className="inline-flex flex-col items-center gap-1.5 rounded-2xl border-2 border-primary-brand/20 bg-gradient-to-br from-white/50 to-primary-brand/5 px-5 py-3 shadow-lg backdrop-blur-sm sm:gap-2 sm:px-6 sm:py-4">
               <div className="flex items-baseline gap-2 sm:gap-3">
                 <span className="text-xs font-medium text-text-dark/50 line-through sm:text-sm">R$ 2.872,00</span>
-                <span className="text-xl font-bold text-primary-brand sm:text-2xl md:text-3xl">R$ 77,00</span>
+                <span className="text-xl font-bold text-primary-brand sm:text-2xl md:text-3xl">R$ {fullPrice}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-px w-6 bg-primary-brand/30 sm:w-8"></div>

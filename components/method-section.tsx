@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 
 export default function MethodSection({
-  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd",
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd&bid=1759319546432",
 }: {
   checkoutUrl?: string
 }) {

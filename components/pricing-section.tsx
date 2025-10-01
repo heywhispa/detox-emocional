@@ -3,13 +3,19 @@
 import { Button } from "@/components/ui/button"
 
 export default function PricingSection({
-  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd",
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd&bid=1759319546432",
+  fullPrice = "147,00",
+  installmentPrice = "16,11",
 }: {
   checkoutUrl?: string
+  fullPrice?: string
+  installmentPrice?: string
 }) {
   const handleCheckout = () => {
     window.location.href = checkoutUrl
   }
+
+  const [installmentInteger, installmentDecimal] = installmentPrice.split(",")
 
   const items = [
     {
@@ -165,17 +171,17 @@ export default function PricingSection({
                           R$
                         </span>
                         <span className="bg-gradient-to-br from-text-dark to-text-dark/80 bg-clip-text text-[80px] font-bold leading-none text-transparent sm:text-[100px] md:text-[120px] lg:text-[140px]">
-                          {"9"}
+                          {installmentInteger}
                         </span>
                         <span className="mt-2 text-xl font-bold text-text-dark sm:mt-3 sm:text-2xl md:mt-4 md:text-3xl">
-                          ,02
+                          ,{installmentDecimal}
                         </span>
                       </div>
                       <p className="mb-2 text-xs text-text-dark/70 sm:text-sm">por mês no cartão</p>
 
                       {/* Cash Price with Highlight */}
                       <div className="inline-block rounded-full bg-[#4CAF50]/10 px-4 py-2 sm:px-6 sm:py-3">
-                        <p className="text-xl font-bold text-[#4CAF50] sm:text-2xl">R$ 77,00 à vista</p>
+                        <p className="text-xl font-bold text-[#4CAF50] sm:text-2xl">R$ {fullPrice} à vista</p>
                       </div>
                     </div>
 

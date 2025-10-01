@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main>
       {/* Above the fold - load immediately */}
-      <DetoxSection checkoutUrl={checkoutUrl} />
+      <DetoxSection checkoutUrl={checkoutUrl} fullPrice="77,00" />
       <BenefitsSection />
 
       {/* Below the fold - lazy load */}
@@ -39,7 +39,7 @@ export default function Home() {
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>
-        <PricingSection checkoutUrl={checkoutUrl} />
+        <PricingSection checkoutUrl={checkoutUrl} fullPrice="77,00" installmentPrice="9,02" />
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>
