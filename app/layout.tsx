@@ -41,13 +41,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link
-          rel="preload"
-          href="/_next/static/media/geist-sans.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

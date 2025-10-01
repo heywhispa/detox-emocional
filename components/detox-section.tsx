@@ -58,9 +58,7 @@ export default function DetoxSection({
         <div
           className="absolute top-[15%] right-[10%] w-16 h-16 lg:w-20 lg:h-20 z-20 hidden sm:block"
           style={{
-            transform: "translate3d(0, 0, 0)",
             animation: "float 3s ease-in-out infinite",
-            willChange: "transform",
           }}
         >
           <Image
@@ -70,17 +68,15 @@ export default function DetoxSection({
             height={80}
             sizes="80px"
             className="w-full h-auto drop-shadow-lg"
-            priority
+            fetchPriority="high"
           />
         </div>
 
         <div
           className="absolute bottom-[15%] left-[10%] w-20 h-20 lg:w-24 lg:h-24 z-20 hidden sm:block"
           style={{
-            transform: "translate3d(0, 0, 0)",
             animation: "float-delayed 4s ease-in-out infinite",
             animationDelay: "0.5s",
-            willChange: "transform",
           }}
         >
           <Image
@@ -90,7 +86,7 @@ export default function DetoxSection({
             height={96}
             sizes="96px"
             className="w-full h-auto drop-shadow-lg"
-            priority
+            fetchPriority="high"
           />
         </div>
       </div>

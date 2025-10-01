@@ -4,7 +4,6 @@ export default function BenefitsSection() {
   return (
     <section className="bg-background-cream px-4 py-12 sm:px-6 sm:py-14 md:py-16 lg:py-24 xl:py-32">
       <div className="mx-auto max-w-7xl">
-        {/* Decorative Icon */}
         <div className="mb-8 flex justify-start md:mb-12">
           <Image
             src="/images/decorative-icon.svg"
@@ -13,7 +12,7 @@ export default function BenefitsSection() {
             height={48}
             sizes="80px"
             className="h-8 sm:h-10 md:h-12"
-            priority
+            fetchPriority="high"
           />
         </div>
 
@@ -41,7 +40,7 @@ export default function BenefitsSection() {
                   height={48}
                   sizes="48px"
                   className="h-10 w-10 sm:h-12 sm:w-12"
-                  priority
+                  fetchPriority="high"
                 />
               </div>
               <p className="text-pretty text-base leading-relaxed text-text-muted sm:text-lg">
