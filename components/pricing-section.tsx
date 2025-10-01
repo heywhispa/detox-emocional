@@ -38,13 +38,13 @@ export default function PricingSection() {
 
   return (
     <section className="relative overflow-hidden bg-background-dark px-4 py-12 sm:px-6 sm:py-14 md:py-16 lg:py-24 xl:py-32">
-      {/* Decorative Mandala Background Pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-5 sm:opacity-10">
         <svg
           className="absolute left-0 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2"
           viewBox="0 0 800 800"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <circle cx="400" cy="400" r="300" stroke="white" strokeWidth="2" />
           <circle cx="400" cy="400" r="250" stroke="white" strokeWidth="2" />
@@ -52,33 +52,6 @@ export default function PricingSection() {
           <circle cx="400" cy="400" r="150" stroke="white" strokeWidth="2" />
           <circle cx="400" cy="400" r="100" stroke="white" strokeWidth="2" />
           <circle cx="400" cy="400" r="50" stroke="white" strokeWidth="2" />
-          {[...Array(12)].map((_, i) => {
-            const angle = (i * 30 * Math.PI) / 180
-            const x1 = 400 + Math.cos(angle) * 50
-            const y1 = 400 + Math.sin(angle) * 50
-            const x2 = 400 + Math.cos(angle) * 300
-            const y2 = 400 + Math.sin(angle) * 300
-            return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="white" strokeWidth="2" />
-          })}
-          {[...Array(8)].map((_, i) => {
-            const angle = (i * 45 * Math.PI) / 180
-            const petalSize = 80
-            const cx = 400 + Math.cos(angle) * 200
-            const cy = 400 + Math.sin(angle) * 200
-            return (
-              <ellipse
-                key={`petal-${i}`}
-                cx={cx}
-                cy={cy}
-                rx={petalSize}
-                ry={petalSize * 1.5}
-                stroke="white"
-                strokeWidth="2"
-                fill="none"
-                transform={`rotate(${i * 45}, ${cx}, ${cy})`}
-              />
-            )
-          })}
         </svg>
       </div>
 

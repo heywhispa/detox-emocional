@@ -8,12 +8,29 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
-  icons: {
-    icon: "/favicon.svg",
+  title: "Detox Emocional 2.0 | Eu Sou a Mudança",
+  description:
+    "Transforme sua vida em 21 dias com o Detox Emocional 2.0. Liberte-se de padrões emocionais limitantes e descubra seu verdadeiro potencial.",
+  metadataBase: new URL("https://www.eusouamudanca.com"),
+  openGraph: {
+    title: "Detox Emocional 2.0 | Eu Sou a Mudança",
+    description:
+      "Transforme sua vida em 21 dias com o Detox Emocional 2.0. Liberte-se de padrões emocionais limitantes e descubra seu verdadeiro potencial.",
+    url: "https://www.eusouamudanca.com/detox-emocional",
+    siteName: "Eu Sou a Mudança",
+    locale: "pt_BR",
+    type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Detox Emocional 2.0 | Eu Sou a Mudança",
+    description:
+      "Transforme sua vida em 21 dias com o Detox Emocional 2.0. Liberte-se de padrões emocionais limitantes e descubra seu verdadeiro potencial.",
+  },
+  icons: {
+    icon: "/favicon.jpg",
+  },
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -22,8 +39,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <Script id="gtm-script" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

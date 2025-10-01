@@ -41,8 +41,10 @@ export default function DetoxSection() {
                 alt="Pessoa sorrindo representando bem-estar emocional"
                 width={1000}
                 height={1200}
+                sizes="(max-width: 768px) 0vw, (max-width: 1024px) 55vw, 60vw"
                 className="w-full h-auto object-cover object-bottom"
                 priority
+                fetchPriority="high"
               />
             </div>
 
@@ -54,7 +56,9 @@ export default function DetoxSection() {
                 alt=""
                 width={80}
                 height={80}
+                sizes="80px"
                 className="w-full h-auto drop-shadow-lg"
+                loading="eager"
               />
             </div>
 
@@ -65,7 +69,9 @@ export default function DetoxSection() {
                 alt=""
                 width={96}
                 height={96}
+                sizes="96px"
                 className="w-full h-auto drop-shadow-lg"
+                loading="eager"
               />
             </div>
 
@@ -76,7 +82,9 @@ export default function DetoxSection() {
                 alt=""
                 width={80}
                 height={80}
+                sizes="80px"
                 className="w-full h-auto drop-shadow-lg"
+                loading="eager"
               />
             </div>
 
@@ -87,7 +95,9 @@ export default function DetoxSection() {
                 alt=""
                 width={64}
                 height={64}
+                sizes="64px"
                 className="w-full h-auto drop-shadow-lg"
+                loading="eager"
               />
             </div>
 
@@ -98,7 +108,9 @@ export default function DetoxSection() {
                 alt=""
                 width={56}
                 height={56}
+                sizes="56px"
                 className="w-full h-auto drop-shadow-lg"
+                loading="eager"
               />
             </div>
           </div>

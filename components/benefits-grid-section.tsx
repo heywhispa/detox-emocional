@@ -40,7 +40,15 @@ export default function BenefitsGridSection() {
       <div className="mx-auto max-w-7xl">
         {/* Decorative Icon */}
         <div className="mb-6 flex justify-center sm:mb-8">
-          <Image src="/images/benefits-icon.svg" alt="" width={80} height={40} className="h-8 w-16 sm:h-10 sm:w-20" />
+          <Image
+            src="/images/benefits-icon.svg"
+            alt=""
+            width={80}
+            height={40}
+            sizes="80px"
+            className="h-8 w-16 sm:h-10 sm:w-20"
+            loading="lazy"
+          />
         </div>
 
         {/* Headline */}
@@ -61,7 +69,9 @@ export default function BenefitsGridSection() {
                   alt=""
                   width={64}
                   height={64}
+                  sizes="64px"
                   className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
+                  loading="lazy"
                 />
               </div>
               <p className="text-pretty text-sm leading-relaxed text-text-muted sm:text-base md:text-base lg:text-lg">

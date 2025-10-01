@@ -15,7 +15,9 @@ export default function CtaCardsSection() {
                 alt=""
                 width={80}
                 height={80}
+                sizes="(max-width: 640px) 48px, (max-width: 768px) 56px, (max-width: 1024px) 64px, 80px"
                 className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"
+                loading="lazy"
               />
             </div>
 
@@ -46,7 +48,9 @@ export default function CtaCardsSection() {
                 alt="Mulher sorrindo representando bem-estar"
                 width={500}
                 height={600}
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="h-auto w-full"
+                loading="lazy"
               />
             </div>
           </div>
