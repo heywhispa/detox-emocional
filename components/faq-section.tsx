@@ -25,7 +25,7 @@ export default function FaqSection() {
     },
     {
       question: "E se eu não tiver tempo todos os dias?",
-      answer: "As práticas levam apenas 30 minutos. Você pode adaptar e até repetir quando quiser.",
+      answer: "As práticas levam apenas 15 minutos. Você pode adaptar e até repetir quando quiser.",
     },
     {
       question: "Quando começo a sentir resultados?",

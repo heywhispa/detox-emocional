@@ -161,17 +161,17 @@ export default function PricingSection() {
                           R$
                         </span>
                         <span className="bg-gradient-to-br from-text-dark to-text-dark/80 bg-clip-text text-[80px] font-bold leading-none text-transparent sm:text-[100px] md:text-[120px] lg:text-[140px]">
-                          27
+                          {"9"}
                         </span>
                         <span className="mt-2 text-xl font-bold text-text-dark sm:mt-3 sm:text-2xl md:mt-4 md:text-3xl">
-                          ,07
+                          ,02
                         </span>
                       </div>
                       <p className="mb-2 text-xs text-text-dark/70 sm:text-sm">por mês no cartão</p>
 
                       {/* Cash Price with Highlight */}
                       <div className="inline-block rounded-full bg-[#4CAF50]/10 px-4 py-2 sm:px-6 sm:py-3">
-                        <p className="text-xl font-bold text-[#4CAF50] sm:text-2xl">R$ 247,00 à vista</p>
+                        <p className="text-xl font-bold text-[#4CAF50] sm:text-2xl">R$ 77,00 à vista</p>
                       </div>
                     </div>
 
@@ -209,7 +209,7 @@ export default function PricingSection() {
                             strokeLinejoin="round"
                           />
                         </svg>
-                        <span>72% de desconto | Garantia incondicional de 30 dias</span>
+                        <span>80% de desconto | Garantia incondicional de 14 dias</span>
                       </div>
                       <div className="flex items-center justify-center gap-1.5 text-xs text-[#7B5BA1] sm:gap-2 sm:text-sm">
                         <svg
