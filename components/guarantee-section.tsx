@@ -1,4 +1,10 @@
+"use client"
+
 export default function GuaranteeSection() {
+  const handleCheckout = () => {
+    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+  }
+
   return (
     <section className="bg-background-cream px-4 py-12 sm:px-6 sm:py-14 md:py-16 lg:py-24 xl:py-32">
       <div className="mx-auto max-w-3xl">
@@ -100,7 +106,10 @@ export default function GuaranteeSection() {
           </div>
 
           {/* CTA Button */}
-          <button className="min-h-[44px] w-full rounded-full bg-gradient-to-r from-primary-brand to-primary-brand-hover px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:px-10 md:py-5 md:text-lg lg:text-xl">
+          <button
+            onClick={handleCheckout}
+            className="min-h-[44px] w-full rounded-full bg-gradient-to-r from-primary-brand to-primary-brand-hover px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:px-10 md:py-5 md:text-lg lg:text-xl"
+          >
             Quero dar o primeiro passo agora
           </button>
         </div>

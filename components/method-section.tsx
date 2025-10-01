@@ -1,6 +1,12 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 
 export default function MethodSection() {
+  const handleCheckout = () => {
+    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+  }
+
   const features = [
     {
       title: "Aulas imersivas e práticas",
@@ -113,6 +119,7 @@ export default function MethodSection() {
         <div className="mt-10 flex justify-center sm:mt-12">
           <Button
             size="lg"
+            onClick={handleCheckout}
             className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-brand-hover hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:h-14 md:px-10 md:text-base lg:px-12 lg:text-lg"
           >
             Quero recuperar minha confiança

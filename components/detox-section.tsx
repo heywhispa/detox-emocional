@@ -1,7 +1,13 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export default function DetoxSection() {
+  const handleCheckout = () => {
+    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+  }
+
   return (
     <section className="relative min-h-[600px] bg-background-alt sm:min-h-screen">
       <div className="flex min-h-[600px] items-center justify-center sm:min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12">
@@ -23,6 +29,7 @@ export default function DetoxSection() {
           <div className="flex justify-center">
             <Button
               size="lg"
+              onClick={handleCheckout}
               className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-brand-hover hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:py-5 md:text-base lg:px-8 lg:py-6 lg:text-lg"
             >
               Quero começar meu Detox Emocional agora

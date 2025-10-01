@@ -1,6 +1,12 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 
 export default function PricingSection() {
+  const handleCheckout = () => {
+    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+  }
+
   const items = [
     {
       title: "Acesso ao Programa Detox Emocional",
@@ -170,7 +176,10 @@ export default function PricingSection() {
                     </div>
 
                     {/* Enhanced CTA Button */}
-                    <Button className="mb-6 min-h-[44px] w-full rounded-full bg-gradient-to-r from-[#4CAF50] to-[#45a049] py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl sm:mb-8 sm:py-4 sm:text-base md:py-5 md:text-base lg:py-7 lg:text-lg">
+                    <Button
+                      onClick={handleCheckout}
+                      className="mb-6 min-h-[44px] w-full rounded-full bg-gradient-to-r from-[#4CAF50] to-[#45a049] py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl sm:mb-8 sm:py-4 sm:text-base md:py-5 md:text-base lg:py-7 lg:text-lg"
+                    >
                       DÊ O PRÓXIMO PASSO AGORA
                     </Button>
 

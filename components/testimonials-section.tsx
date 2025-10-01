@@ -7,6 +7,10 @@ import { useState } from "react"
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  const handleCheckout = () => {
+    window.location.href = "https://pay.hotmart.com/D80370991B?off=xktg7idd"
+  }
+
   const testimonials = [
     {
       name: "Maria Silva",
@@ -133,7 +137,10 @@ export default function TestimonialsSection() {
 
         {/* CTA Button */}
         <div className="mt-12 flex justify-center sm:mt-14 md:mt-16">
-          <Button className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-brand-hover hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:h-14 md:px-10 md:text-base lg:px-12 lg:text-lg">
+          <Button
+            onClick={handleCheckout}
+            className="min-h-[44px] w-full rounded-full bg-primary-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-brand-hover hover:shadow-xl sm:w-auto sm:px-8 sm:py-4 sm:text-base md:h-14 md:px-10 md:text-base lg:px-12 lg:text-lg"
+          >
             Sim, estou pronta para meu Detox Emocional
           </Button>
         </div>
