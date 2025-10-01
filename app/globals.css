@@ -111,47 +111,33 @@
   }
 }
 
-/* Floating animations for macaron elements */
+/* Optimized floating animations with GPU acceleration */
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translateY(-20px) rotate(5deg);
+    transform: translate3d(0, -20px, 0) rotate(5deg);
   }
 }
 
 @keyframes float-delayed {
   0%,
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translateY(-15px) rotate(-5deg);
+    transform: translate3d(0, -15px, 0) rotate(-5deg);
   }
 }
 
 @keyframes float-slow {
   0%,
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px) rotate(3deg);
+    transform: translate3d(0, -10px, 0) rotate(3deg);
   }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float-delayed 4s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.animate-float-slow {
-  animation: float-slow 5s ease-in-out infinite;
-  animation-delay: 1s;
 }
