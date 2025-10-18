@@ -13,7 +13,7 @@ const FaqSection = lazy(() => import("@/components/faq-section"))
 const SectionFallback = () => <div className="min-h-[200px]" />
 
 export default function Home() {
-  const checkoutUrl = "https://pay.hotmart.com/D80370991B?off=2qs7fnm8&bid=1759321561837"
+  const checkoutUrl = "https://pay.hotmart.com/D80370991B?off=2qs7fnm8&checkoutMode=10"
 
   return (
     <main>

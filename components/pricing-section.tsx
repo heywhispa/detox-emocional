@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 
 export default function PricingSection({
-  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd&bid=1759319546432",
+  checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd&checkoutMode=10",
   fullPrice = "147,00",
   installmentPrice = "16,11",
 }: {
