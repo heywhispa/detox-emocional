@@ -2,18 +2,44 @@
 import Image from "next/image"
 import Script from "next/script"
 import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react"
 
 export default function DetoxSection({
   checkoutUrl = "https://pay.hotmart.com/D80370991B?off=xktg7idd&checkoutMode=10",
   fullPrice = "147,00",
   showVideo = false,
-  showPricing = true, // Added prop to control pricing visibility
+  showPricing = true,
 }: {
   checkoutUrl?: string
   fullPrice?: string
   showVideo?: boolean
-  showPricing?: boolean // New prop
+  showPricing?: boolean
 }) {
+  const [videoReady, setVideoReady] = useState(false)
+
+  useEffect(() => {
+    if (showVideo) {
+      // Wait for SmartPlayer script to load before showing iframe
+      const checkScript = setInterval(() => {
+        if (typeof window !== "undefined" && document.querySelector('script[src*="smartplayer"]')) {
+          setVideoReady(true)
+          clearInterval(checkScript)
+        }
+      }, 100)
+
+      // Fallback: show video after 2 seconds even if script check fails
+      const fallbackTimer = setTimeout(() => {
+        setVideoReady(true)
+        clearInterval(checkScript)
+      }, 2000)
+
+      return () => {
+        clearInterval(checkScript)
+        clearTimeout(fallbackTimer)
+      }
+    }
+  }, [showVideo])
+
   return (
     <section className="relative min-h-[600px] bg-background-alt sm:min-h-screen">
       <div className="flex min-h-[600px] items-center justify-center sm:min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12">
@@ -24,7 +50,6 @@ export default function DetoxSection({
             <span className="text-text-dark">que roubam a sua autoconfiança.</span>
           </h1>
 
-          {/* Subheadline before video */}
           <div className="space-y-3 text-base leading-relaxed text-text-dark sm:space-y-4 sm:text-lg md:text-lg lg:text-xl">
             <p>
               O Detox Emocional é uma reprogramação mental que{" "}
@@ -35,28 +60,29 @@ export default function DetoxSection({
 
           {showVideo && (
             <div className="py-4 sm:py-6">
-              <Script src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js" strategy="lazyOnload" />
-              <div id="ifr_68f964f2c376aaf61f78cfc5_wrapper" style={{ margin: "0 auto", width: "100%" }}>
-                <div style={{ position: "relative", padding: "56.25% 0 0 0" }} id="ifr_68f964f2c376aaf61f78cfc5_aspect">
-                  <iframe
-                    frameBorder="0"
-                    allowFullScreen
-                    src="about:blank"
-                    id="ifr_68f964f2c376aaf61f78cfc5"
-                    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                    referrerPolicy="origin"
-                    onLoad={(e) => {
-                      const iframe = e.currentTarget
-                      iframe.onload = null
-                      iframe.src =
-                        "https://scripts.converteai.net/8d3d0868-e01b-41a4-a8e9-cd22cc3cd8d6/players/68f964f2c376aaf61f78cfc5/v4/embed.html" +
-                        (location.search || "?") +
-                        "&vl=" +
-                        encodeURIComponent(location.href)
-                    }}
-                  />
+              <Script
+                src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js"
+                strategy="afterInteractive"
+                onLoad={() => setVideoReady(true)}
+              />
+              {videoReady && (
+                <div id="ifr_68f964f2c376aaf61f78cfc5_wrapper" style={{ margin: "0 auto", width: "100%" }}>
+                  <div
+                    style={{ position: "relative", padding: "56.25% 0 0 0" }}
+                    id="ifr_68f964f2c376aaf61f78cfc5_aspect"
+                  >
+                    <iframe
+                      frameBorder="0"
+                      allowFullScreen
+                      src={`https://scripts.converteai.net/8d3d0868-e01b-41a4-a8e9-cd22cc3cd8d6/players/68f964f2c376aaf61f78cfc5/v4/embed.html${location.search || "?"}${location.search ? "&" : ""}vl=${encodeURIComponent(location.href)}`}
+                      id="ifr_68f964f2c376aaf61f78cfc5"
+                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                      referrerPolicy="origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           )}
 
