@@ -18,7 +18,12 @@ export default function Home() {
   return (
     <main>
       {/* Section 1 - Always visible */}
-      <DetoxSection fullPrice="247,00" showVideo={true} showPricing={false} />
+      <DetoxSection
+        fullPrice="247,00"
+        showVideo={true}
+        showPricing={false}
+        subheadline="Assista ao vídeo e descubra como reprogramar sua mente, silenciar as vozes internas que te sabotam e despertar a mulher forte e autêntica que sempre existiu em você."
+      />
 
       <TimedContentReveal delaySeconds={1080}>
         <PricingCTASection fullPrice="247,00" />

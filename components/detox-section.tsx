@@ -9,11 +9,13 @@ export default function DetoxSection({
   fullPrice = "147,00",
   showVideo = false,
   showPricing = true,
+  subheadline,
 }: {
   checkoutUrl?: string
   fullPrice?: string
   showVideo?: boolean
   showPricing?: boolean
+  subheadline?: string
 }) {
   const [videoReady, setVideoReady] = useState(false)
 
@@ -40,6 +42,14 @@ export default function DetoxSection({
     }
   }, [showVideo])
 
+  const defaultSubheadline = (
+    <>
+      O Detox Emocional é uma reprogramação mental que <span className="font-semibold">apaga as vozes internas</span>{" "}
+      que te sabotam e <span className="font-semibold">reativa a mulher forte e autêntica</span> que sempre esteve aí
+      dentro.
+    </>
+  )
+
   return (
     <section className="relative min-h-[600px] bg-background-alt sm:min-h-screen">
       <div className="flex min-h-[600px] items-center justify-center sm:min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12">
@@ -51,38 +61,19 @@ export default function DetoxSection({
           </h1>
 
           <div className="space-y-3 text-base leading-relaxed text-text-dark sm:space-y-4 sm:text-lg md:text-lg lg:text-xl">
-            <p>
-              O Detox Emocional é uma reprogramação mental que{" "}
-              <span className="font-semibold">apaga as vozes internas</span> que te sabotam e{" "}
-              <span className="font-semibold">reativa a mulher forte e autêntica</span> que sempre esteve aí dentro.
-            </p>
+            <p>{subheadline || defaultSubheadline}</p>
           </div>
 
           {showVideo && (
             <div className="py-4 sm:py-6">
               <Script
-                src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js"
+                src="https://scripts.converteai.net/8d3d0868-e01b-41a4-a8e9-cd22cc3cd8d6/players/690bae03a187d80a470b923e/v4/player.js"
                 strategy="afterInteractive"
-                onLoad={() => setVideoReady(true)}
               />
-              {videoReady && (
-                <div id="ifr_68f964f2c376aaf61f78cfc5_wrapper" style={{ margin: "0 auto", width: "100%" }}>
-                  <div
-                    style={{ position: "relative", padding: "56.25% 0 0 0" }}
-                    id="ifr_68f964f2c376aaf61f78cfc5_aspect"
-                  >
-                    <iframe
-                      frameBorder="0"
-                      allowFullScreen
-                      src={`https://scripts.converteai.net/8d3d0868-e01b-41a4-a8e9-cd22cc3cd8d6/players/68f964f2c376aaf61f78cfc5/v4/embed.html${location.search || "?"}${location.search ? "&" : ""}vl=${encodeURIComponent(location.href)}`}
-                      id="ifr_68f964f2c376aaf61f78cfc5"
-                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                      referrerPolicy="origin"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    />
-                  </div>
-                </div>
-              )}
+              <vturb-smartplayer
+                id="vid-690bae03a187d80a470b923e"
+                style={{ display: "block", margin: "0 auto", width: "100%" }}
+              />
             </div>
           )}
 

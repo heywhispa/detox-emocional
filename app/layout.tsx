@@ -40,6 +40,27 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);`,
+          }}
+        />
+        <link
+          rel="preload"
+          href="https://scripts.converteai.net/8d3d0868-e01b-41a4-a8e9-cd22cc3cd8d6/players/690bae03a187d80a470b923e/v4/player.js"
+          as="script"
+        />
+        <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script" />
+        <link
+          rel="preload"
+          href="https://cdn.converteai.net/8d3d0868-e01b-41a4-a8e9-cd22cc3cd8d6/690bab042464ff08d6f15e0b/main.m3u8"
+          as="fetch"
+        />
+        <link rel="dns-prefetch" href="https://cdn.converteai.net" />
+        <link rel="dns-prefetch" href="https://scripts.converteai.net" />
+        <link rel="dns-prefetch" href="https://images.converteai.net" />
+        <link rel="dns-prefetch" href="https://api.vturb.com.br" />
+
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
