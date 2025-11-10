@@ -15,6 +15,8 @@ const FaqSection = lazy(() => import("@/components/faq-section"))
 const SectionFallback = () => <div className="min-h-[200px]" />
 
 export default function Home() {
+  const checkoutUrl = "https://pay.hotmart.com/D80370991B?off=mxkchn1g&checkoutMode=10"
+
   return (
     <main>
       {/* Section 1 - Always visible */}
@@ -26,37 +28,37 @@ export default function Home() {
       />
 
       <TimedContentReveal delaySeconds={1080}>
-        <PricingCTASection fullPrice="247,00" />
+        <PricingCTASection fullPrice="247,00" checkoutUrl={checkoutUrl} />
 
-        <BenefitsSection />
+        <BenefitsSection checkoutUrl={checkoutUrl} />
 
         {/* Below the fold - lazy load */}
         <Suspense fallback={<SectionFallback />}>
-          <CtaCardsSection />
+          <CtaCardsSection checkoutUrl={checkoutUrl} />
         </Suspense>
 
         <Suspense fallback={<SectionFallback />}>
-          <BenefitsGridSection />
+          <BenefitsGridSection checkoutUrl={checkoutUrl} />
         </Suspense>
 
         <Suspense fallback={<SectionFallback />}>
-          <MethodSection />
+          <MethodSection checkoutUrl={checkoutUrl} />
         </Suspense>
 
         <Suspense fallback={<SectionFallback />}>
-          <TestimonialsSection />
+          <TestimonialsSection checkoutUrl={checkoutUrl} />
         </Suspense>
 
         <Suspense fallback={<SectionFallback />}>
-          <PricingSection fullPrice="247,00" />
+          <PricingSection fullPrice="247,00" checkoutUrl={checkoutUrl} />
         </Suspense>
 
         <Suspense fallback={<SectionFallback />}>
-          <GuaranteeSection />
+          <GuaranteeSection checkoutUrl={checkoutUrl} />
         </Suspense>
 
         <Suspense fallback={<SectionFallback />}>
-          <FaqSection />
+          <FaqSection checkoutUrl={checkoutUrl} />
         </Suspense>
       </TimedContentReveal>
     </main>
