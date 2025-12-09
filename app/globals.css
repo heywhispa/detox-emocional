@@ -49,6 +49,17 @@
   --text-dark: #3b4f5c;
   --text-muted: #6b7280;
   --border-accent: #e8d5f0;
+
+  /* Adding semantic tokens for Virada spiritual design */
+  --virada-cream: #fffcf8;
+  --virada-light-beige: #faf5ef;
+  --virada-warm-beige: #f5ede3;
+  --virada-gold: #dcc4a3;
+  --virada-gold-hover: #c9b393;
+  --virada-border-light: #e3d4bc;
+  --virada-bg-card: #faf7f2;
+  --virada-text-dark: #2a2724;
+  --virada-text-muted: #6e6a67;
 }
 
 @theme inline {
@@ -89,6 +100,10 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  /* Updated font variable to use Inter instead of Geist */
+  --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+
   /* Mapping semantic tokens to Tailwind color classes */
   --color-background-cream: var(--background-cream);
   --color-background-alt: var(--background-alt);
@@ -100,6 +115,17 @@
   --color-text-dark: var(--text-dark);
   --color-text-muted: var(--text-muted);
   --color-border-accent: var(--border-accent);
+
+  /* Mapping Virada semantic tokens to Tailwind classes */
+  --color-virada-cream: var(--virada-cream);
+  --color-virada-light-beige: var(--virada-light-beige);
+  --color-virada-warm-beige: var(--virada-warm-beige);
+  --color-virada-gold: var(--virada-gold);
+  --color-virada-gold-hover: var(--virada-gold-hover);
+  --color-virada-border-light: var(--virada-border-light);
+  --color-virada-bg-card: var(--virada-bg-card);
+  --color-virada-text-dark: var(--virada-text-dark);
+  --color-virada-text-muted: var(--virada-text-muted);
 }
 
 @layer base {
