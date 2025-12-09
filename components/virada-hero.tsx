@@ -71,6 +71,10 @@ export default function ViradaHero() {
         </p>
 
         {/* CTA Button with enhanced glow */}
+        <p className="mb-3 text-sm text-virada-text-muted">
+          Clique no botão para entrar no grupo de whatsapp do evento.
+        </p>
+
         <div className="relative inline-block">
           <div className="absolute inset-0 animate-pulse blur-2xl bg-virada-gold/40 rounded-xl" />
           <Button
@@ -103,7 +107,7 @@ export default function ViradaHero() {
               d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
             />
           </svg>
-          <p className="text-sm text-virada-text-muted">Evento online e gratuito.</p>
+          <p className="text-sm text-virada-text-muted">Evento online e gratuito | Não ficará gravado</p>
         </div>
       </div>
     </section>
