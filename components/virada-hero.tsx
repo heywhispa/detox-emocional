@@ -2,8 +2,19 @@
 
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useState } from "react"
+import { RedirectNotification } from "./redirect-notification"
 
 export default function ViradaHero() {
+  const [showNotification, setShowNotification] = useState(false)
+  const redirectUrl =
+    "https://api.pluglead.com/group-manager/group-manager/d707caa2-e5fa-4d0a-902a-e5477c8babe1/redirect/be4fa6b0-f428-4c41-b131-f4b0bc127a0e"
+
+  const handleRedirect = () => {
+    setShowNotification(true)
+    window.open(redirectUrl, "_blank")
+  }
+
   return (
     <section className="relative overflow-hidden px-4 pb-4 pt-12 sm:px-6 md:px-8">
       <div className="absolute inset-0">
@@ -78,12 +89,7 @@ export default function ViradaHero() {
         <div className="relative inline-block">
           <div className="absolute inset-0 animate-pulse blur-2xl bg-virada-gold/40 rounded-xl" />
           <Button
-            onClick={() =>
-              window.open(
-                "https://api.pluglead.com/group-manager/group-manager/d707caa2-e5fa-4d0a-902a-e5477c8babe1/redirect/be4fa6b0-f428-4c41-b131-f4b0bc127a0e",
-                "_blank",
-              )
-            }
+            onClick={handleRedirect}
             className="relative mb-3 h-auto rounded-xl bg-gradient-to-r from-virada-gold to-virada-gold-hover px-12 py-4 text-lg font-medium text-virada-text-dark shadow-lg transition-all hover:shadow-xl hover:brightness-110"
             style={{ minWidth: "280px" }}
           >
@@ -110,6 +116,8 @@ export default function ViradaHero() {
           <p className="text-sm text-virada-text-muted">Evento online e gratuito | Não ficará gravado</p>
         </div>
       </div>
+
+      {showNotification && <RedirectNotification url={redirectUrl} onClose={() => setShowNotification(false)} />}
     </section>
   )
 }

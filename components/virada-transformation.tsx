@@ -1,8 +1,19 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
+import { RedirectNotification } from "./redirect-notification"
 
 export default function ViradaTransformation() {
+  const [showNotification, setShowNotification] = useState(false)
+  const redirectUrl =
+    "https://api.pluglead.com/group-manager/group-manager/d707caa2-e5fa-4d0a-902a-e5477c8babe1/redirect/be4fa6b0-f428-4c41-b131-f4b0bc127a0e"
+
+  const handleRedirect = () => {
+    setShowNotification(true)
+    window.open(redirectUrl, "_blank")
+  }
+
   const transformationCards = [
     {
       icon: "✨",
@@ -126,12 +137,7 @@ export default function ViradaTransformation() {
           <div className="relative w-full max-w-md px-4 sm:px-0">
             <div className="absolute inset-0 animate-pulse blur-2xl bg-virada-gold/40 rounded-xl" />
             <Button
-              onClick={() =>
-                window.open(
-                  "https://api.pluglead.com/group-manager/group-manager/d707caa2-e5fa-4d0a-902a-e5477c8babe1/redirect/be4fa6b0-f428-4c41-b131-f4b0bc127a0e",
-                  "_blank",
-                )
-              }
+              onClick={handleRedirect}
               className="relative h-auto w-full rounded-xl bg-gradient-to-r from-virada-gold to-virada-gold-hover px-6 py-4 text-base sm:text-lg font-medium text-virada-text-dark shadow-lg transition-all hover:shadow-xl hover:brightness-110 sm:px-12"
             >
               Sim. Eu estou pronta para A VIRADA.
@@ -139,6 +145,8 @@ export default function ViradaTransformation() {
           </div>
         </div>
       </div>
+
+      {showNotification && <RedirectNotification url={redirectUrl} onClose={() => setShowNotification(false)} />}
     </section>
   )
 }

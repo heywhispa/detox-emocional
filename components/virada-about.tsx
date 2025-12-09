@@ -1,6 +1,19 @@
+"use client"
+
 import Image from "next/image"
+import { useState } from "react"
+import { RedirectNotification } from "./redirect-notification"
 
 export default function ViradaAbout() {
+  const [showNotification, setShowNotification] = useState(false)
+  const redirectUrl =
+    "https://api.pluglead.com/group-manager/group-manager/d707caa2-e5fa-4d0a-902a-e5477c8babe1/redirect/be4fa6b0-f428-4c41-b131-f4b0bc127a0e"
+
+  const handleRedirect = () => {
+    setShowNotification(true)
+    window.open(redirectUrl, "_blank")
+  }
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background via-virada-cream to-virada-bg-card px-4 py-20 sm:px-6 md:px-8">
       {/* Decorative Elements */}
@@ -83,17 +96,17 @@ export default function ViradaAbout() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <a
-            href="https://api.pluglead.com/group-manager/group-manager/d707caa2-e5fa-4d0a-902a-e5477c8babe1/redirect/be4fa6b0-f428-4c41-b131-f4b0bc127a0e"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={handleRedirect}
             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-virada-gold to-virada-border-light px-8 py-4 font-semibold text-virada-text-dark shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:px-12 sm:text-lg"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-virada-border-light to-virada-gold opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-50" />
             <span className="relative">Eu quero participar</span>
-          </a>
+          </button>
         </div>
       </div>
+
+      {showNotification && <RedirectNotification url={redirectUrl} onClose={() => setShowNotification(false)} />}
     </section>
   )
 }
