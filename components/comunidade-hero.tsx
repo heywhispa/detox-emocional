@@ -3,7 +3,7 @@
 import Script from "next/script"
 
 export function ComunidadeHero() {
-  const redirectUrl = "#" // Update with actual redirect URL
+  const redirectUrl = "https://pay.hotmart.com/G103916158I" // Updated redirect URL to Hotmart checkout
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#FAF4EE]">
