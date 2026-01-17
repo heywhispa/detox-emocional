@@ -3,18 +3,18 @@ import Script from "next/script"
 import { ComunidadeHero } from "@/components/comunidade-hero"
 
 export const metadata: Metadata = {
-  title: "Comunidade | Eu Sou a Mudança",
+  title: "Eu Sou a Mudança",
   description:
     "Assista esse vídeo e entenda por que você sempre volta pro mesmo lugar — e como interromper esse padrão de uma vez por todas.",
   openGraph: {
-    title: "Comunidade | Eu Sou a Mudança",
+    title: "Eu Sou a Mudança",
     description:
       "Assista esse vídeo e entenda por que você sempre volta pro mesmo lugar — e como interromper esse padrão de uma vez por todas.",
     siteName: "Eu Sou a Mudança",
   },
 }
 
-export default function ComunidadePage() {
+export default function HomePage() {
   return (
     <>
       <Script id="vturb-plt" strategy="beforeInteractive">
