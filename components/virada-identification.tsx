@@ -1,18 +1,4 @@
-"use client"
-
-import { useState } from "react"
-import { RedirectNotification } from "./redirect-notification"
-
 export default function ViradaIdentification() {
-  const [showNotification, setShowNotification] = useState(false)
-  const redirectUrl =
-    "https://api.pluglead.com/group-manager/group-manager/d707caa2-e5fa-4d0a-902a-e5477c8babe1/redirect/be4fa6b0-f428-4c41-b131-f4b0bc127a0e"
-
-  const handleRedirect = () => {
-    setShowNotification(true)
-    window.open(redirectUrl, "_blank")
-  }
-
   const bulletPoints = [
     '"Eu não posso entrar em 2026 desse jeito."',
     '"Eu não aguento viver mais um ano igual."',
@@ -85,17 +71,17 @@ export default function ViradaIdentification() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <button
-            onClick={handleRedirect}
+          <a
+            href="https://api.pluglead.com/group-manager/group-manager/d707caa2-e5fa-4d0a-902a-e5477c8babe1/redirect/be4fa6b0-f428-4c41-b131-f4b0bc127a0e"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-virada-gold to-virada-gold-hover px-6 py-4 font-medium text-virada-text-dark shadow-lg transition-all hover:scale-105 hover:shadow-xl sm:w-auto sm:px-12 sm:text-lg"
           >
             <span className="relative z-10">Eu quero esse presente</span>
             <div className="absolute inset-0 rounded-full bg-virada-gold-hover opacity-0 transition-opacity group-hover:opacity-100" />
-          </button>
+          </a>
         </div>
       </div>
-
-      {showNotification && <RedirectNotification url={redirectUrl} onClose={() => setShowNotification(false)} />}
     </section>
   )
 }
