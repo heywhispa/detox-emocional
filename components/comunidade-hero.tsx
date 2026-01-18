@@ -1,20 +1,9 @@
 "use client"
 
 import Script from "next/script"
-import { useState, useEffect } from "react"
 
 export function ComunidadeHero() {
   const redirectUrl = "https://pay.hotmart.com/G103916158I" // Updated redirect URL to Hotmart checkout
-  const [showButton, setShowButton] = useState(false)
-
-  useEffect(() => {
-    // 8 minutes and 30 seconds = 510 seconds = 510000 milliseconds
-    const timer = setTimeout(() => {
-      setShowButton(true)
-    }, 510000)
-
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#FAF4EE]">
@@ -64,7 +53,7 @@ export function ComunidadeHero() {
         <div className="mx-auto max-w-4xl space-y-8 text-center">
           {/* Headline */}
           <h1 className="text-balance text-2xl font-bold leading-tight text-[#4E4E4E] sm:text-3xl md:text-4xl lg:text-5xl">
-            Você já está cansada de começar o ano prometendo que{" "}
+            Você está cansada de começar o ano prometendo que{" "}
             <span className="bg-gradient-to-r from-[#7FA6C8] to-[#B6E2C9] bg-clip-text text-transparent">
               vai ser diferente?
             </span>
@@ -89,10 +78,8 @@ export function ComunidadeHero() {
             </div>
           </div>
 
-          {/* CTA Button - Added conditional rendering with fade-in animation */}
-          <div
-            className={`pt-4 transition-all duration-700 ${showButton ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
-          >
+          {/* CTA Button */}
+          <div className="pt-4">
             <a
               href={redirectUrl}
               target="_blank"
