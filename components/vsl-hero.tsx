@@ -1,9 +1,20 @@
 "use client"
 
 import Script from "next/script"
+import { useState, useEffect } from "react"
 
-export function ComunidadeHero() {
-  const redirectUrl = "https://pay.hotmart.com/G103916158I" // Updated redirect URL to Hotmart checkout
+export function VSLHero() {
+  const redirectUrl = "https://pay.hotmart.com/G103916158I"
+  const [showButton, setShowButton] = useState(false)
+
+  useEffect(() => {
+    // 8 minutes and 30 seconds = 510000 milliseconds
+    const timer = setTimeout(() => {
+      setShowButton(true)
+    }, 510000)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#FAF4EE]">
@@ -78,8 +89,12 @@ export function ComunidadeHero() {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="pt-4">
+          {/* CTA Button with delay */}
+          <div
+            className={`pt-4 transition-all duration-1000 ${
+              showButton ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
+            }`}
+          >
             <a
               href={redirectUrl}
               target="_blank"
